@@ -353,26 +353,26 @@ we recorded these specially.
       macro "say", ->
 
         input "^(.*) +(iterated|pronounced)$", ->
-        phrase "say-iterated", "$1"
+          phrase "say-iterated", "$1"
 
         input "^(.*) +counted$", ->
-        phrase "say-counted", "$1"
+          phrase "say-counted", "$1"
 
         input "^(.*)( *€| +currency)$", ->
-        phrase "say-currency", "$1"
+          phrase "say-currency", "$1"
 
 ignore leading zeros
 
         input "^0(.*)$", ->
-        phrase "say-number", "$1"
+          phrase "say-number", "$1"
 
 default
 
         input "^(.*) masculine?$", ->
-        phrase "say", "$1"
+          phrase "say", "$1"
 
         input "^(.)$", ->
-        phrase "say-single", "$1"
+          phrase "say-single", "$1"
 
 VoiceMail
 =========
