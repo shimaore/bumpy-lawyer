@@ -28,7 +28,7 @@ We didn't think of recording 'colon'.
         ]
         input '^([0-9])$', 'digits/$1.wav'
         input '^[*]$', 'digits/star.wav'
-        input '^[#]$', 'digits/poung.wav'
+        input '^[#]$', 'digits/pound.wav'
         input '^[ ]$', 'phonetic-ascii/32.wav'
         input '^[.]$', 'phonetic-ascii/46.wav'
         input '^[@]$', 'phonetic-ascii/64.wav'
