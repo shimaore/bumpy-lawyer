@@ -24,7 +24,7 @@
                 play c
 
     play = (data) ->
-      L.action function:'play', data:data
+      L.action function:'play-file', data:data
 
     phrase = (name,data) ->
       L.action function:'phrase', phrase:name, data:data
