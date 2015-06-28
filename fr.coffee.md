@@ -306,8 +306,8 @@ we recorded these specially.
           phrase "say-number", "$1"
 
         input "^7([02-9])", ->
-        phrase "say-number", "60"
-        phrase "say-number", "1$1"
+          phrase "say-number", "60"
+          phrase "say-number", "1$1"
 
         input "^9([0-9])", ->
           phrase "say-number", "80"
