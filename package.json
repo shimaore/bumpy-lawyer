@@ -1,6 +1,6 @@
 {
   "name": "bumpy-lawyer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Phrase generation for FreeSwitch",
   "scripts": {
     "prepublish": "coffee -c -m *.coffee.md",
