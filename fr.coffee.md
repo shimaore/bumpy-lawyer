@@ -316,13 +316,13 @@ we recorded these specially.
       macro "say-day-of-month", ->
 
         input "^0?1$", ->
-        phrase "say-counted", "1"
+          phrase "say-counted", "1"
 
         input "^0?([2-9])$", ->
-        phrase "say-number", "$1"
+          phrase "say-number", "$1"
 
         input "^([123][0-9])$", ->
-        phrase "say-number", "$1"
+          phrase "say-number", "$1"
 
       macro "say-month", ->
         input "^0?1$", -> play "time/mon-0.wav"  
