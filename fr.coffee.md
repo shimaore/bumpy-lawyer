@@ -519,16 +519,8 @@ VoiceMail
           play "voicemail/vm-that_was_an_invalid_ext.wav"
 
        macro "voicemail_listen_file_check", ->
-        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):(.*)$", ->
-          play "voicemail/vm-listen_to_recording.wav"
-          play "voicemail/vm-press.wav"
-          phrase "say", "$1 pronounced"
-          play "voicemail/vm-save_recording.wav"
-          play "voicemail/vm-press.wav"
-          phrase "say", "$2 pronounced"
-          play "voicemail/vm-delete_recording.wav"
-          play "voicemail/vm-press.wav"
-          phrase "say", "$3 pronounced"
+        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
+          phrase 'voicemail_listen_file_check', '$1:$2:$3'
           play "voicemail/vm-forward_to_email.wav"
           play "voicemail/vm-press.wav"
           phrase "say", "$4 pronounced"
@@ -538,7 +530,17 @@ VoiceMail
           play "voicemail/vm-to_forward.wav"
           play "voicemail/vm-press.wav"
           phrase "say", "$6 pronounced"
-        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
+
+        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
+          phrase 'voicemail_listen_file_check', '$1:$2:$3'
+          play "voicemail/vm-return_call.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$4 pronounced"
+          play "voicemail/vm-to_forward.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$5 pronounced"
+
+        input "^([0-9#*]):([0-9#*]):([0-9#*])$", ->
           play "voicemail/vm-listen_to_recording.wav"
           play "voicemail/vm-press.wav"
           phrase "say", "$1 pronounced"
@@ -548,12 +550,6 @@ VoiceMail
           play "voicemail/vm-delete_recording.wav"
           play "voicemail/vm-press.wav"
           phrase "say", "$3 pronounced"
-          play "voicemail/vm-return_call.wav"
-          play "voicemail/vm-press.wav"
-          phrase "say", "$4 pronounced"
-          play "voicemail/vm-to_forward.wav"
-          play "voicemail/vm-press.wav"
-          phrase "say", "$5 pronounced"
 
       macro "voicemail_choose_greeting", ->
         input "^(.*)$", ->
