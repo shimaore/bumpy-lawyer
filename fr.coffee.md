@@ -57,13 +57,13 @@ We didn't think of recording 'colon'.
           phrase "say-number", "$1"
           play "currency/euro.wav"
 
-        input "^([0-9]+)\.0([0-9])$", ->
+        input "^([0-9]+)\\.0([0-9])$", ->
           phrase "say-number", "$1"
           play "currency/euro.wav"
           phrase "say-number", "$2"
           play "currency/cent.wav"
 
-        input "^([0-9]+)\.([1-9][0-9])$", ->
+        input "^([0-9]+)\\.([1-9][0-9])$", ->
           phrase "say-number", "$1"
           play "currency/euro.wav"
           phrase "say-number", "$2"
@@ -73,7 +73,7 @@ We didn't think of recording 'colon'.
 
 IPv4 address
 
-        input "^([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$", ->
+        input "^([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})\\.([0-9]{1,3})$", ->
           phrase "say-number", "$1"
           play "digits/dot.wav"
           phrase "say-number", "$2"
@@ -84,7 +84,7 @@ IPv4 address
 
 IPv6 address
 
-        input pattern="^([0-9a-f]{1,4})(\:.*)$", ->
+        input pattern="^([0-9a-f]{1,4})(\\:.*)$", ->
           phrase "say-iterated", "$1"
           phrase "ip-addr", "$2"
 
@@ -226,10 +226,11 @@ note: in french you would say "21 secondes virgule 1" so we do not
 deal with feminine here
 
 pronounce initial zeros
-        input "^([0-9]*)\.([0]+)([1-9][0-9]*)$", ->
+
+        input "^([0-9]*)\\.([0]+)([1-9][0-9]*)$", ->
           phrase "say-number", "$1 point iterated $2 $3"
 
-        input "^([0-9]*)\.([1-9][0-9]*)$", ->
+        input "^([0-9]*)\\.([1-9][0-9]*)$", ->
           phrase "say-number", "$1 point $2"
 
 ignore leading zeros
@@ -299,7 +300,7 @@ we recorded these specially.
 
         input "^([23456])1", ->
           phrase "say-number", "$1_0"
-          play "generic/234.wav"
+          play "digits/x1.wav"
 
         input "^8(1.*)$", ->
           play "digits/80.wav"
@@ -420,7 +421,7 @@ VoiceMail
           ###
         input "^0:new", ->
           play "voicemail/vm-you_have_neg.wav"
-          play "generic/372.wav"
+          play "more/none.wav"
           play "voicemail/vm-new.wav"
           play "voicemail/vm-message.wav"
         input "^([^:]+):new", ->
@@ -430,7 +431,7 @@ VoiceMail
           play "voicemail/vm-message.wav"
         input "^0:saved", ->
           play "voicemail/vm-you_have_neg.wav"
-          play "generic/372.wav"
+          play "more/none.wav"
           play "voicemail/vm-message.wav"
           play "voicemail/vm-urgent.wav"
         input "^([^:]+):saved", ->
@@ -568,7 +569,7 @@ VoiceMail
           play "voicemail/vm-record_message.wav"
 
       macro "voicemail_greeting_selected", ->
-        input "^(\d+)$", ->
+        input "^(\\d+)$", ->
           play "voicemail/vm-greeting.wav"
           phrase "say", "$1 pronounced"
           play "voicemail/vm-selected.wav"
@@ -584,11 +585,11 @@ VoiceMail
           play "voicemail/vm-not_available.wav"
 
       macro "voicemail_say_number", ->
-        input "^(\d+)$", ->
+        input "^(\\d+)$", ->
           phrase "say", "$1 pronounced"
 
       macro "voicemail_say_message_number", ->
-        input "^([a-z]+):(\d+)$", ->
+        input "^([a-z]+):(\\d+)$", ->
           play "voicemail/vm-$1.wav" # new|urgent
           play "voicemail/vm-message_number.wav"
           phrase "say-number", "$2"
@@ -617,7 +618,7 @@ VoiceMail
           play "voicemail/vm-mailbox_full.wav"
 
       macro "valet_announce_ext", ->
-        input "^([^\:]+):(.*)$", ->
+        input "^([^\\:]+):(.*)$", ->
           phrase "say", "$2 pronounced"
 
       macro "valet_lot_full", ->
