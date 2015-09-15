@@ -284,33 +284,33 @@ two digits or less
         input "^([1-9]0|1[0-9]|[1-9])f?$", ->
           play "digits/$1.wav"
 
-        input "^([234568])([2-9])", ->
+        input "^([234568])([2-9])f?$", ->
           phrase "say-number", "$1_0"
           play "digits/$2.wav"
 
-        input "^([234568])1f", ->
+        input "^([234568])1f$", ->
           phrase "say-number", "$1_0"
           play "currency/and.wav"
           play "digits/1f.wav"
 
 we recorded these specially.
 
-        input "^(11|21|71|91)", ->
+        input "^(21|71|91)f?$", ->
           play "digits/$1.wav"
 
-        input "^([23456])1", ->
+        input "^([23456])1$", ->
           phrase "say-number", "$1_0"
           play "digits/x1.wav"
 
-        input "^8(1.*)$", ->
+        input "^81$", ->
           play "digits/80.wav"
-          phrase "say-number", "$1"
+          phrase "say-number", "1"
 
-        input "^7([02-9])", ->
+        input "^7([02-9])f?$", ->
           phrase "say-number", "60"
           phrase "say-number", "1$1"
 
-        input "^9([0-9])", ->
+        input "^9([0-9])f?$", ->
           phrase "say-number", "80"
           phrase "say-number", "1$1"
 
@@ -349,7 +349,7 @@ we recorded these specially.
           phrase "say-number", "$1f"
           play "time/hour.wav"
           phrase "say-number", "$2f"
-            # play "time/minute.wav"
+          # play "time/minute.wav"
 
       macro "say", ->
 
