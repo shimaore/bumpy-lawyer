@@ -115,6 +115,9 @@ FIXME h-hundred is missing !!
 
 ignore leading zeros
 
+        input "^0+f?$", ->
+          play "digits/0.wav"
+
         input "^0+(.*)$", ->
           phrase "say-counted", "$1"
 
