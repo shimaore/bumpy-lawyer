@@ -240,7 +240,7 @@ pronounce initial zeros
 
 ignore leading zeros
 
-        input "^0f?$", ->
+        input "^0+f?$", ->
           play "digits/0.wav"
         input "^0+(.*)$", ->
           phrase "say-number", "$1"
@@ -369,7 +369,7 @@ we recorded these specially.
 
 ignore leading zeros
 
-        input "^0(.*)$", ->
+        input "^0+(.+)$", ->
           phrase "say-number", "$1"
 
 default
