@@ -220,6 +220,8 @@ two digits and less
 
 work around bug in switch_perform_substitution which prevents from
 doing for example ${1}0, while $10 is interpreted as 'dollar-ten'.
+Note: this should have been fixed by commit c2c8fba14a0352dfeecf31a0f818d83f83a93a85
+(FS-5566) a long time ago, maybe this is a remnant of ccnq3 using an older version.
 
         input "^([1-9])_(0)$", ->
           play "digits/$1$2.wav"
