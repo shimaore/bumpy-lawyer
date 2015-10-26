@@ -35,7 +35,7 @@ We didn't think of recording 'colon'.
         for letter in [97..122]
           lowercase = String.fromCharCode letter
           uppercase =String.fromCharCode letter-32
-          input "^[#{lowercase}#{uppercase}]$", "phonetic-ascii/#{letter}.wav"
+          input "^[#{lowercase}#{uppercase}]$", "ascii/#{letter}.wav"
 
       macro 'spell', ->
         input '^(.)$', ->
