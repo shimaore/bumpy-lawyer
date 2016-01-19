@@ -331,18 +331,18 @@ we recorded these specially.
           phrase "say-number", "$1"
 
       macro "say-month", ->
-        input "^0?1$", -> play "time/mon-0.wav"  
-        input "^0?2$", -> play "time/mon-1.wav"  
-        input "^0?3$", -> play "time/mon-2.wav"  
-        input "^0?4$", -> play "time/mon-3.wav"  
-        input "^0?5$", -> play "time/mon-4.wav"  
-        input "^0?6$", -> play "time/mon-5.wav"  
-        input "^0?7$", -> play "time/mon-6.wav"  
-        input "^0?8$", -> play "time/mon-7.wav"  
-        input "^0?9$", -> play "time/mon-8.wav"  
-        input "^10$", -> play "time/mon-9.wav"  
-        input "^11$", -> play "time/mon-10.wav"  
-        input "^12$", -> play "time/mon-11.wav"  
+        input "^0?1$", -> play "time/mon-0.wav"
+        input "^0?2$", -> play "time/mon-1.wav"
+        input "^0?3$", -> play "time/mon-2.wav"
+        input "^0?4$", -> play "time/mon-3.wav"
+        input "^0?5$", -> play "time/mon-4.wav"
+        input "^0?6$", -> play "time/mon-5.wav"
+        input "^0?7$", -> play "time/mon-6.wav"
+        input "^0?8$", -> play "time/mon-7.wav"
+        input "^0?9$", -> play "time/mon-8.wav"
+        input "^10$", -> play "time/mon-9.wav"
+        input "^11$", -> play "time/mon-10.wav"
+        input "^12$", -> play "time/mon-11.wav"
 
       macro "say-time", ->
 
@@ -524,7 +524,7 @@ VoiceMail
         input "^(.*)$", ->
           play "voicemail/vm-that_was_an_invalid_ext.wav"
 
-       macro "voicemail_listen_file_check", ->
+      macro "voicemail_listen_file_check", ->
         input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
           phrase 'voicemail_listen_file_check', '$1:$2:$3'
           play "voicemail/vm-forward_to_email.wav"
@@ -585,7 +585,7 @@ VoiceMail
           phrase "say", "$1 pronounced"
           play "voicemail/vm-not_available.wav"
 
-       macro "voicemail_unavailable", ->
+      macro "voicemail_unavailable", ->
         input "^(.*)$", ->
           play "voicemail/vm-not_available.wav"
 
