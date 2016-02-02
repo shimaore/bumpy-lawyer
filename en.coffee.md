@@ -585,7 +585,7 @@ VoiceMail
           phrase "say-counted", "$1"
           play "voicemail/vm-message.wav"
           play "voicemail/vm-received.wav"
-          phrase "say-day-of-month", "$4"
           phrase "say-month", "$3"
+          phrase "say-day-of-month", "$4"
           play "time/at.wav"
           phrase "say-time", "$5"
