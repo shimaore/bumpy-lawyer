@@ -1,4 +1,4 @@
-    describe 'fr', ->
+    describe 'en', ->
       it 'should build configuration', ->
         L = require 'acoustic-line'
         t = L.render require('../en').include {}
