@@ -496,6 +496,20 @@ VoiceMail
           play "voicemail/vm-press.wav"
           phrase "say", "$3 pronounced"
 
+        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
+          play "voicemail/vm-listen_to_recording.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$1 pronounced"
+          play "voicemail/vm-save_recording.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$2 pronounced"
+          play "voicemail/vm-rerecord.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$3 pronounced"
+          play "voicemail/vm-to_forward.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$4 pronounced"
+
       macro "voicemail_record_urgent_check", ->
         input "^([0-9#*]):([0-9#*])$", ->
           play "voicemail/vm-mark-urgent.wav"
