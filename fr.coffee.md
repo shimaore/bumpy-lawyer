@@ -546,6 +546,12 @@ VoiceMail
           play "voicemail/vm-press.wav"
           phrase "say", "$5 pronounced"
 
+        input "^([0-9#*]):([0-9#*]):([0-9#*]):([0-9#*])$", ->
+          phrase 'voicemail_listen_file_check', '$1:$2:$3'
+          play "voicemail/vm-to_forward.wav"
+          play "voicemail/vm-press.wav"
+          phrase "say", "$4 pronounced"
+
         input "^([0-9#*]):([0-9#*]):([0-9#*])$", ->
           play "voicemail/vm-listen_to_recording.wav"
           play "voicemail/vm-press.wav"
