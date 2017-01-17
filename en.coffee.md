@@ -595,3 +595,11 @@ VoiceMail
           phrase "say-day-of-month", "$4"
           play "time/at.wav"
           phrase "say-time", "$5"
+
+Conference
+==========
+
+      macro 'conference_pin', ->
+        play 'conference/conf-pin.wav'
+      macro 'conference_bad_pin', ->
+        play 'conference/conf-bad-pin.wav'
