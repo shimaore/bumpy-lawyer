@@ -599,7 +599,14 @@ VoiceMail
 Conference
 ==========
 
-      macro 'conference_pin', ->
-        play 'conference/conf-pin.wav'
-      macro 'conference_bad_pin', ->
-        play 'conference/conf-bad-pin.wav'
+      conference = ->
+        input 'pin', ->
+          play 'conference/conf-pin.wav'
+        input 'bad_pin', ->
+          play 'conference/conf-bad-pin.wav'
+
+      macro 'conference', conference
+
+So there's this, hum, feature in `mod_conference` where `conference_file_local_play` prepends `sound_prefix` and inserts an extra slash. (Because doing `phrase:`, `phrase:'`, or `phrase://` is not recognized as a full URL.)
+
+      macro '/conference', conference
