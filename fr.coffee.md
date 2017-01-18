@@ -484,6 +484,7 @@ VoiceMail
       macro "voicemail_record_name", ->
         input "^(.*)$", ->
           play "voicemail/vm-record_name1.wav"
+          play 'tone_stream://%(1000,0,500)'
 
       macro "voicemail_record_file_check", ->
         input "^([0-9#*]):([0-9#*]):([0-9#*])$", ->
