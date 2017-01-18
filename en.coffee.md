@@ -601,11 +601,11 @@ Conference
 ==========
 
       conference = ->
-        input 'pin', ->
+        input '^pin$', ->
           play 'conference/conf-pin.wav'
-        input 'bad_pin', ->
+        input '^bad_pin$', ->
           play 'conference/conf-bad-pin.wav'
-        input 'has_joined:(.*)$', ->
+        input '^has_joined:(.*)$', ->
           play 'file_string://$1'
           play 'conference/conf-has-joined.wav'
 
