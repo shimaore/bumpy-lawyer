@@ -663,6 +663,11 @@ Conference
         input '^has_joined:(.*)$', ->
           play 'file_string://$1'
           play 'conference/conf-has-joined.wav'
+        input '^confirm$', ->
+          play 'conference/conf-welcome.wav'
+          play 'more/please-type.wav'
+          play 'digits/1.wav'
+          play 'more/to-continue.wav'
 
       macro 'conference', conference
 
