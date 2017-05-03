@@ -608,6 +608,10 @@ Conference
         input '^has_joined:(.*)$', ->
           play 'file_string://$1'
           play 'conference/conf-has-joined.wav'
+        input '^confirm$', ->
+          play 'conference/conf-welcome.wav'
+          play 'voicemail/vm-press.wav'
+          play 'digits/1.wav'
 
       macro 'conference', conference
 
