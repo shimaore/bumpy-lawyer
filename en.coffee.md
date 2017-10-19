@@ -618,3 +618,11 @@ Conference
 So there's this, hum, feature in `mod_conference` where `conference_file_local_play` prepends `sound_prefix` and inserts an extra slash. (Because doing `phrase:`, `phrase:'`, or `phrase://` is not recognized as a full URL.)
 
       macro '/conference', conference
+
+Confirm
+=======
+
+      macro 'confirm', ->
+        input '^(\\d)$', ->
+          play 'voicemail/vm-press.wav'
+          play 'digits/$1.wav'
