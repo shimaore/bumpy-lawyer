@@ -612,6 +612,12 @@ Conference
           play 'conference/conf-welcome.wav'
           play 'voicemail/vm-press.wav'
           play 'digits/$1.wav'
+        input '^count:0$', ->
+          play 'conference/conf-alone'
+        input '^count:(\\d)$', ->
+          play 'queue/queue-there-are'
+          phrase 'say', '$1'
+          play 'queue/queue-persons-before-you'
 
       macro 'conference', conference
 
