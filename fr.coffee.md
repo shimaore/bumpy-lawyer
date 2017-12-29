@@ -672,7 +672,7 @@ Conference
           play 'conference/conf-alone'
         input '^count:(\\d)$', ->
           play 'queue/queue-there-are'
-          phrase 'say', '$1'
+          phrase 'say-number', '$1f'
           play 'queue/queue-persons-before-you'
 
       macro 'conference', conference
