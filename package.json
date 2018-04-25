@@ -3,7 +3,7 @@
   "version": "2.6.0",
   "description": "Phrase generation for FreeSwitch",
   "scripts": {
-    "prepublish": "coffee -c -m *.coffee.md",
+    "prepublishOnly": "npm install --only=dev && rm package-lock.json && coffee -c *.coffee.md",
     "pretest": "npm install",
     "test": "mocha"
   },
