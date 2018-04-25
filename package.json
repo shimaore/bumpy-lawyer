@@ -1,6 +1,6 @@
 {
   "name": "bumpy-lawyer",
-  "version": "2.7.1",
+  "version": "2.7.2",
   "description": "Phrase generation for FreeSwitch",
   "scripts": {
     "prepublishOnly": "npm install --only=dev && rm package-lock.json && coffee -c *.coffee.md",
